@@ -11,22 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Set up Python
+    - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
         python-version: '3.12'
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: Deploy to Azure Web App
+    - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'AzureDesignPatterns'
+        app-name: AzureDesignPatterns
         publish-profile: ${{ secrets.AzureDesignGame }}
         package: .
