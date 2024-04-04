@@ -1,0 +1,27 @@
+[
+    {
+        "DesignPattern": "What is the difference between the retry and circuit breaker design pattern?",
+        "Description": "The Retry pattern is optimistic—it assumes that the problem is transient and can be overcome by trying again. The Circuit Breaker pattern is protective—it assumes that the problem may not be quickly resolved and stops the application from performing futile operations. In a robust system, these patterns can be combined: Retry can handle short-term issues with individual operations, while Circuit Breaker can prevent the system from being overwhelmed by issues that are more persistent.",
+        "Link": "No Link Available"
+    },
+    {
+        "DesignPattern": "What is the key difference between the Gateway Routing and Gateway Aggregation pattern?",
+        "Description": "The key difference is that the Gateway Routing pattern directs incoming requests to the appropriate service, while the Gateway Aggregation pattern combines responses from multiple services into a single response to the client.",
+        "Link": "No Link Available"
+    },
+    {
+    "DesignPattern": "Can/shold you implement the Throttling Design pattern directly?",
+    "Description": "No. Throttling is often a fallback mechanism. Ideally, systems should be designed with other patterns like load balancing and queuing to manage demand and distribute workloads efficiently, reducing the likelihood of needing to throttle requests.",
+    "Link": "No Link Available"
+    },
+    {
+        "DesignPattern": "What are stateless and stateful design patterns?",
+        "Description": "Stateless Design Patterns: These patterns do not maintain any client state within the server. Each request from the client must contain all the information the server needs to fulfill that request. Stateless architectures simplify scaling and improve resilience, as any server can handle any request at any time, but they may require more data to be sent with each request. Stateful Design Patterns: In contrast, stateful design patterns maintain client state within the server for the duration of a session. This can make the client-server interaction more efficient, as the server can remember previous interactions and state, potentially reducing the amount of data that needs to be sent with each request. However, stateful designs can complicate scaling and failover, as the client's state is tied to a specific server instance.",
+        "Link": "No Link Available"
+    },
+    {
+        "DesignPattern": "Why do most stateless design patterns require a FIFO implementation?",
+        "Description": "Stateless design patterns often follow the First In, First Out (FIFO) principle due to the nature of how they process requests. In a stateless architecture, each request is independent and contains all the information needed for its processing. Since there's no retained state from previous interactions, requests can be processed in the order they are received, which naturally aligns with the FIFO principle.",
+        "Link": "No Link Available"
+    }
+]
