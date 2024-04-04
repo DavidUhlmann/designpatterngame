@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.12'  # Specify Python 3.12
+        python-version: '3.12'  # Ensure this matches the Python version you're using
 
     - name: Install dependencies
       run: |
@@ -24,9 +24,9 @@ jobs:
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: Deploy to Azure Web App
+    - name: AzureDesignPatterns
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'AzureDesignPatterns'  # Use the actual name of your Azure App Service
-        publish-profile: ${{ secrets.AzureDesignGame }}  # Your Azure deployment secret
+        app-name: 'AzureDesignPatterns'  # Replace with your Azure App Service name
+        publish-profile: ${{ secrets.AzureDesignGame }}  # The secret containing your Azure publish profile
         package: .
